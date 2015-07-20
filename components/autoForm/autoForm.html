@@ -2,11 +2,16 @@
   {{#unless afDestroyUpdateForm}}
     <form {{atts}}>
       <div class="row">
-        {{#with innerContext ..}}
-          {{> UI.contentBlock this}}
-        {{/with}}
+        <div class="col s12">
+          <div class="card-panel autoform-object-field">
+            <div class="card-content">
+              {{#with innerContext ..}}
+                {{> UI.contentBlock this}}
+              {{/with}}
+            </div>
+          </div>
+        </div>
       </div>
     </form>
   {{/unless}}
 </template>
-

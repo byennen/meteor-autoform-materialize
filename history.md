@@ -1,3 +1,9 @@
+# 0.0.22
+ - Fixes #48 (thanks to @jholl)
+
+# 0.0.21
+ - Fixes #43
+
 # 0.0.20
  - Lots of fixes (haven't tracked the bugs numbers this time...)
 

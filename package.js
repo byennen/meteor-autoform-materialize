@@ -6,9 +6,11 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  var both = ['web', 'server'];
+
   api.versionsFrom("1.0");
   api.use(["templating", "underscore"], "client");
-  api.use("aldeed:autoform@5.1.1");
+  api.use(["aldeed:autoform@5.1.1", "cfs:autoform"], both);
   api.addFiles([
     // utility
     'utilities/initialize.js',
@@ -99,6 +101,9 @@ Package.onUse(function(api) {
     'components/afFormGroup/afFormGroup.html',
     'components/afFormGroup/afFormGroup.js',
     'components/afObjectField/afObjectField.html',
-    'components/afQuickField/afQuickField.html'
+    'components/afQuickField/afQuickField.html',
+    // templates
+    'templates/cfs-autoform.html',
+    'templates/cfs-autoform.js'
   ], "client");
 });

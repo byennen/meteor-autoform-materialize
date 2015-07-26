@@ -1,6 +1,6 @@
 CfsAutoForm = CfsAutoForm || {};
-// CfsAutoForm.Util = Util;
-// CfsAutoForm.Hooks = Hooks;
+CfsAutoForm.Util = Util;
+CfsAutoForm.Hooks = Hooks;
 
 CfsAutoForm.deleteUploadedFiles = function(template) {
   template.$('.cfsaf-hidden').each(function () {

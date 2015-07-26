@@ -1,30 +1,33 @@
 <template name="afArrayField_materialize">
-  <div class="collection">
-    <div class="collection-item">
-      {{afFieldLabelText name=this.atts.name}}
-
+  <div class="row">
+    <div class="col s12">
       {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
         <button type="button" class="btn autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
           Add <i class="mdi-content-add"></i>
         </button>
       {{/if}}
     </div>
+  </div>
+  <ul class="collection">
+    <li class="collection-header">
+        <strong>{{afFieldLabelText name=this.atts.name}}</strong>
+    </li>
     {{#if afFieldIsInvalid name=this.atts.name}}
-      <div class="collection-item">
+      <li class="collection-item">
         <span class="red-text">{{{afFieldMessage name=this.atts.name}}}</span>
-      </div>
+      </li>
     {{/if}}
     {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
-      <div class="collection-item">
+      <li class="collection-item">
         {{> afQuickField name=this.name label=false options=afOptionsFromSchema}}
-      </div>
+      </li>
       {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
-        <div class="collection-item">
+        <li class="collection-item">
           <button type="button" class="btn autoform-remove-item">
             Remove <span class="mdi-content-clear"></span>
           </button>
-        </div>
+        </li>
       {{/if}}
     {{/afEachArrayItem}}
-  </div>
+  </ul>
 </template>
